@@ -1,0 +1,245 @@
+body {
+  background-color: #F7F7F5 !important;
+  color: #1F1E31 !important;
+}
+
+.topbar {
+  background-color: #1F1E31;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topbar button {
+  width: fit-content;
+  background-color: #D2F35E;
+  border-color: #D2F35E;
+  color: #1F1E31;
+  height: fit-content;
+  padding: 10px;
+}
+
+.topbar button:hover {
+  background-color: #e4fdcd;
+  border-color: #D2F35E;
+}
+
+.topbar button:active {
+  background-color: #D2F35E !important;
+  border-color: #1F1E31 !important;
+}
+
+.card {
+  border-radius: 10px;
+  border: 0.5px solid #f2f2f2 !important;
+  padding: 0px;
+  margin: 0px;
+}
+
+.card p {
+  padding: 0px;
+  margin: 0px;
+}
+
+h3 {
+  font-size: 18px !important;
+  font-weight: bold;
+}
+
+.card-row {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: baseline !important;
+
+  width: 100%;
+}
+
+.row-income {
+  background-color: #e4fdcd !important;
+}
+
+.row-expense {
+  background-color: #FFE2D3 !important;
+}
+
+
+.card-row span {
+  display: flex !important;
+  flex-direction: row !important;
+  column-gap: 10px;
+  justify-content: space-between !important;
+  align-items: baseline !important;
+}
+
+.avatar {
+  min-width: 40px;
+  min-height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.amount {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.amount-save {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.amount-save span {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin: 20px 0px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-row select {
+  width: 70px;
+}
+
+.add-income {
+  background-color: #D2F35E !important;
+  border-color: #D2F35E !important;
+  color: #1F1E31 !important;
+  font-weight: bold !important;
+}
+
+.add-expenses {
+  background-color: #FC677A !important;
+  border-color: #FC677A !important;
+  font-weight: bold !important;
+}
+
+.add-income:hover {
+  background-color: #e4fdcd !important;
+}
+
+.add-expenses:hover {
+  background-color: #FFE2D3 !important;
+  color: #1F1E31 !important;
+}
+
+.scroll-row {
+  min-width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card-col {
+  width: fit-content;
+  min-width: 220px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.row-tax {
+  background-color: #FFEED2 !important;
+}
+
+.row-savings {
+  background-color: #DDDDF7 !important;
+}
+
+
+.total-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  background-color: #E1E1E1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.total-card .labels {
+  text-align: right;
+}
+
+.title-row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-row span {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  gap: 10px;
+  align-items: center;
+}
+
+.title-row span select {
+  width: 90px;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.total-block {
+  background-color: #1F1E31 !important;
+  color: white !important;
+}
+
+.last-total-card {
+  background-color: #1F1E31 !important;
+  color: white !important;
+  margin-top: 40px;
+}
+
+.expense-outer {
+  max-height: 70vh;
+  overflow-y: scroll;
+}
+
+.income-outer {
+  max-height: 150px;
+  overflow-y: scroll;
+}
+
+.final-total {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.final-total .icon {
+  margin-top: -50px;
+  margin-bottom: 20px;
+}
