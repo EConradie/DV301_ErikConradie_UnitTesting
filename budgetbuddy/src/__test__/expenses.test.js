@@ -6,14 +6,14 @@ const {
 var expenses = [];
 
 beforeEach(() => {
-  console.log("Happens before everything else");
+  console.log("Before every test add 2 expenses");
   expenses.push({ name: "Utilities", amount: 100 });
   expenses.push({ name: "Groceries", amount: 150 });
 });
 
 afterEach(() => {
   // Before running the next test, first empty the array
-  console.log("Happens after everything else");
+  console.log("After each test clear expenses");
   expenses = [];
 });
 
