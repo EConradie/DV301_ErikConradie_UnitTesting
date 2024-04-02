@@ -5,14 +5,14 @@ function PersonIncomeRow(props) {
   const {person, index} = props;
 
   return (
-    <div className='card card-row p-2 mb-2 row-income'>
+    <div className='card card-row p-2 mb-2 row-income' data-testid="income-card">
         <span>
-            <div className='avatar'>
+            <div  className='avatar' aria-label='icon'>
                 {person.icon}
             </div>
-            <p>{index}. {person.name}</p>
+            <p aria-label ='name'>{index}. {person.name}</p>
         </span>
-        <p className='amount'>R {person.salary.toFixed(2)}</p>
+        <p aria-label='income' className='amount'>R {person.salary.toFixed(2)}</p>
     </div>
   )
 }

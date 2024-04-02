@@ -1,42 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import ExpenseRow from "./items/ExpenseRow";
-import { useState } from "react";
 
 function Expenses({ expenses: initialExpenses, handleNewExpense }) {
-  const [expenses, setExpenses] = useState(initialExpenses);
+  const [expenses, setExpenses] = useState([...initialExpenses]);
+  // Adding state for each form field
+  const [title, setTitle] = useState("");
+  const [amount, setAmount] = useState("");
 
   const handleAddExpense = (event) => {
     event.preventDefault();
-    const title = event.target.title.value;
-    const amount = Number(event.target.expense.value);
-    setExpenses([...expenses, { title, amount }]);
-    handleNewExpense({ title, amount });
-    event.target.reset();
+    const amountNumber = Number(amount); // Convert amount to number
+    if (title && amountNumber) { // Check if title and amount are provided
+      const newExpense = { title, amount: amountNumber };
+      setExpenses([...expenses, newExpense]);
+      handleNewExpense(newExpense);
+      // Reset form fields using state
+      setTitle("");
+      setAmount("");
+    }
   };
 
   return (
-    <div>
-      <h3>Household Montly Expenses</h3>
-
+    <div data-testid="expenses-component">
+      <h3>Household Monthly Expenses</h3>
       <Form onSubmit={handleAddExpense}>
         <div className="form-row">
           <Form.Control
             type="text"
-            id="title"
+            aria-label="title"
             name="title"
             placeholder="Expense Title"
             autoComplete="off"
+            value={title} // Controlled component
+            onChange={(e) => setTitle(e.target.value)} // Update state on change
           />
           <Form.Control
             type="number"
-            id="expense"
+            aria-label="amount"
             name="expense"
             step="0.01"
             placeholder="0.00"
             autoComplete="off"
+            value={amount} // Controlled component
+            onChange={(e) => setAmount(e.target.value)} // Update state on change
           />
-          <Button type="submit" className="add-expenses">
+          <Button aria-label="button" type="submit" className="add-expenses">
             Add
           </Button>
         </div>

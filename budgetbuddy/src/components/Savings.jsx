@@ -22,7 +22,7 @@ function Savings({ income, onTotalSavings }) {
   }, [totalSavings, onTotalSavings]);
 
   return (
-    <div>
+    <div data-testid="savings-component">
       <div className="title-row">
         <h3>Savings Calculation</h3>
         <span>
@@ -30,6 +30,7 @@ function Savings({ income, onTotalSavings }) {
           <Form.Select
             id="percentage"
             name="percentage"
+            aria-label="percentage"
             defaultValue="-"
             autoComplete="off"
             onChange={handlePercentageChange}
