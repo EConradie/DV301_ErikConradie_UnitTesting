@@ -3,6 +3,8 @@ import TaxBlock from "./items/TaxBlock";
 import { percentageOptions } from "../utils";
 import { Form } from "react-bootstrap";
 import SavingsBlock from "./items/SavingsBlock";
+import { calculateSavings } from "../components/functions/SavingsCalculation"
+
 
 function Savings({ income, onTotalSavings }) {
   const [selectedPercentage, setSelectedPercentage] = useState(null);
@@ -11,17 +13,8 @@ function Savings({ income, onTotalSavings }) {
     setSelectedPercentage(Number(event.target.value));
   };
 
-  const savingsData = income.map((item) => ({
-    ...item,
-    saves: item.salary * (selectedPercentage / 100),
-  }));
+  const { savingsData, totalSavings } = calculateSavings(income, selectedPercentage);
 
-  // Calculate total savings
-  const totalSavings = parseFloat(
-    savingsData.reduce((acc, curr) => acc + curr.saves, 0).toFixed(2)
-  );
-
-  // Pass total savings to app
   useEffect(() => {
     if (onTotalSavings) {
       onTotalSavings(totalSavings);
