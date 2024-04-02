@@ -23,7 +23,7 @@ test("Test default state of Income Component", () => {
 });
 
 test("Test if income cards display when 2 people are added", () => {
-  var persons = [
+  var personMock = [
     {
       name: "Income 1",
       salary: 1000,
@@ -42,7 +42,7 @@ test("Test if income cards display when 2 people are added", () => {
 
   render(
     <div>
-      {persons.map((person, index) => (
+      {personMock.map((person, index) => (
         <PersonIncomeRow key={index} person={person} />
       ))}
     </div>
@@ -57,9 +57,9 @@ test("Test if income cards display when 2 people are added", () => {
   incomeCards.forEach((element, index) => {
 
     expect(element).toBeInTheDocument();
-    expect(element).toHaveTextContent(`R ${persons[index].salary.toFixed(2)}`);
-    expect(element).toHaveTextContent(persons[index].name);
-    expect(element).toHaveTextContent(persons[index].icon);
+    expect(element).toHaveTextContent(`R ${personMock[index].salary.toFixed(2)}`);
+    expect(element).toHaveTextContent(personMock[index].name);
+    expect(element).toHaveTextContent(personMock[index].icon);
 
   })
 
@@ -74,13 +74,13 @@ test("Test if income cards display when 2 people are added", () => {
 test("Test adding of a new income", async () => {
   var user = userEvent.setup();
 
-  var income = [];
+  var incomeMock = [];
 
   const handleNewIncome = (newIncome) => {
-    income = [...income, newIncome];
+    incomeMock = [...incomeMock, newIncome];
   };
 
-  render(<Income income={income} handleNewIncome={handleNewIncome}  />);
+  render(<Income income={incomeMock} handleNewIncome={handleNewIncome}  />);
 
   var iconInput = screen.getByLabelText("icon");
 
@@ -105,8 +105,8 @@ test("Test adding of a new income", async () => {
 
   await user.click(button)
 
-  expect(income.length).toBe(1)
-  expect(income[0].icon).toBe("👩")
-  expect(income[0].name).toBe("test")
-  expect(income[0].salary).toBe(1000)
+  expect(incomeMock.length).toBe(1)
+  expect(incomeMock[0].icon).toBe("👩")
+  expect(incomeMock[0].name).toBe("test")
+  expect(incomeMock[0].salary).toBe(1000)
 })

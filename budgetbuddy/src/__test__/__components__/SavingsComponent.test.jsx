@@ -1,56 +1,79 @@
-import { render, screen } from '@testing-library/react';
-import Savings from '../../components/Savings';
-import SavingsBlock from '../../components/items/SavingsBlock';
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import Savings from "../../components/Savings";
+import SavingsBlock from "../../components/items/SavingsBlock";
 
-test("Test default state of Savings Component", () => {
-  render(<Savings income={[]} />);
+test("Test default state of SavingsBlock Component", () => {
+  const savingsMock = {
+    icon: "💰",
+    name: "Sample Savings",
+    saves: 200,
+    salary: 1000,
+  };
 
-  var fullComponent = screen.getByTestId("savings-component");
-  var title = screen.getByText("Savings Calculation");
-  var input = screen.getByRole("input");
+  render(<SavingsBlock savings={savingsMock} />);
 
-  expect(title).toBeInTheDocument();
-  expect(input).toBeInTheDocument();
+  const fullComponent = screen.getByTestId("savings-card");
+  const icon = screen.getByLabelText("icon");
+  const name = screen.getByLabelText("name");
+  const savings = screen.getByLabelText("savings");
+
+  expect(icon).toBeInTheDocument();
+  expect(name).toHaveTextContent("Sample Savings");
+  expect(savings).toHaveTextContent(
+    `R ${savingsMock.saves.toFixed(2)} / R ${savingsMock.salary.toFixed(2)}`
+  );
   expect(fullComponent).toMatchSnapshot();
 });
 
 test("Test if savings cards display when 2 savings are added", () => {
-  var savings = [
+  const savingsMock = [
     {
-      name: "Savings 1",
-      amount: 1000,
       icon: "💰",
+      name: "Savings 1",
+      saves: 200,
+      salary: 1000,
     },
     {
-      name: "Savings 2",
-      amount: 2000,
       icon: "💰",
-    }
+      name: "Savings 2",
+      saves: 200,
+      salary: 1000,
+    },
   ];
 
   render(
     <div>
-      {savings.map((saving, index) => (
-        <SavingsBlock key={index} saving={saving} />
+      {savingsMock.map((savings, index) => (
+        <SavingsBlock key={index} savings={savings} />
       ))}
     </div>
   );
 
-  var iconDisplay = screen.getAllByLabelText("icon");
-  var nameDisplay = screen.getAllByLabelText("name");
-  var savingsDisplay = screen.getAllByLabelText("savings");
-  var savingsCards = screen.getAllByTestId("savings-card"); 
-
-  savingsCards.forEach((element, index) => {
-
-    expect(element).toBeInTheDocument();
-    expect(element).toHaveTextContent(`R ${savings[index].amount.toFixed(2)}`);
-    expect(element).toHaveTextContent(savings[index].name);
-    expect(element).toHaveTextContent(savings[index].icon);
-
-  })
+  const iconDisplay = screen.getAllByLabelText("icon");
+  const nameDisplay = screen.getAllByLabelText("name");
+  const savingsDisplay = screen.getAllByLabelText("savings");
 
   expect(iconDisplay).toHaveLength(2);
   expect(nameDisplay).toHaveLength(2);
-  expect(savingsDisplay).toHaveLength(2);    
+  expect(savingsDisplay).toHaveLength(2);
+
+  nameDisplay.forEach((element, index) => {
+    expect(element).toBeInTheDocument();
+    expect(element).toHaveTextContent(savingsMock[index].name);
+  });
+
+  iconDisplay.forEach((element, index) => {
+    expect(element).toBeInTheDocument();
+    expect(element).toHaveTextContent(savingsMock[index].icon);
+  });
+
+  savingsDisplay.forEach((element, index) => {
+    expect(element).toBeInTheDocument();
+    expect(element).toHaveTextContent(
+      `R ${savingsMock[index].saves.toFixed(2)} / R ${savingsMock[
+        index
+      ].salary.toFixed(2)}`
+    );
+  });
 });

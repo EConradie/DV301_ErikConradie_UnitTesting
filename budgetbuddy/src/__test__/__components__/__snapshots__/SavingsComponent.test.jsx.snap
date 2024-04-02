@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test default state of SavingsBlock Component 1`] = `
+<div
+  class="card card-col p-2 row-savings"
+  data-testid="savings-card"
+>
+  <div
+    class="card-row"
+  >
+    <span>
+      <div
+        aria-label="icon"
+        class="avatar"
+      >
+        💰
+      </div>
+      <p
+        aria-label="name"
+      >
+        Sample Savings
+      </p>
+    </span>
+  </div>
+  <p
+    aria-label="savings"
+    class="amount amount-save"
+  >
+     R 
+    200.00
+    <span>
+       / R 
+      1000.00
+    </span>
+  </p>
+</div>
+`;

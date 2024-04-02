@@ -4,19 +4,19 @@ function TaxBlock(props) {
     const {tax} = props
     
   return (
-    <div className='card card-col p-2 row-tax'>
+    <div data-testid="tax-card" className='card card-col p-2 row-tax'>
         <div className='card-row'>
             <span>
-                <div className='avatar'>
+                <div aria-label='icon' className='avatar'>
                     {tax.icon}
                 </div>
-                <p>{tax.name}</p>
+                <p aria-label='name'>{tax.name}</p>
             </span>
 
-            <h4>{tax.bracket}%</h4>
+            <h4 aria-label='bracket'>{tax.bracket}%</h4>
         </div>
        
-        <p className='amount'>- R {tax.taxAmount.toFixed(2)}</p>
+        <p aria-label='tax' className='amount'>- R {tax.taxAmount.toFixed(2)}</p>
     </div>
   )
 }
