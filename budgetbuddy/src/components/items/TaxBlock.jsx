@@ -16,7 +16,7 @@ function TaxBlock(props) {
             <h4 aria-label='bracket'>{tax.bracket}%</h4>
         </div>
        
-        <p aria-label='tax' className='amount'>- R {tax.taxAmount.toFixed(2)}</p>
+        <p aria-label='taxamount' className='amount'>- R {tax.taxAmount.toFixed(2)}</p>
     </div>
   )
 }

@@ -25,7 +25,6 @@ function Income({ income: initialIncome, handleNewIncome }) {
       setIncome([...income, newIncome]);
       handleNewIncome(newIncome);
 
-      // Reset form fields using state
       setIcon("-");
       setName("");
       setSalary("");

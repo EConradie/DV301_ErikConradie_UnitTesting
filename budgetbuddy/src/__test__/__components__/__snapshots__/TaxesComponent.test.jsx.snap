@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test default state of TaxesBlock Component 1`] = `
+<div
+  class="card card-col p-2 row-tax"
+  data-testid="tax-card"
+>
+  <div
+    class="card-row"
+  >
+    <span>
+      <div
+        aria-label="icon"
+        class="avatar"
+      >
+        📈
+      </div>
+      <p
+        aria-label="name"
+      >
+        Income Tax
+      </p>
+    </span>
+    <h4
+      aria-label="bracket"
+    >
+      15
+      %
+    </h4>
+  </div>
+  <p
+    aria-label="taxamount"
+    class="amount"
+  >
+    - R 
+    300.00
+  </p>
+</div>
+`;

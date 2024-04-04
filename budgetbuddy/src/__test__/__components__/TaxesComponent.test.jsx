@@ -1,26 +1,29 @@
 import { render, screen } from "@testing-library/react";
-import TaxesBlock from "../../components/items/TaxesBlock";
+import TaxBlock from "../../components/items/TaxBlock";
+import Taxes from "../../components/Taxes";
 
 test("Test default state of TaxesBlock Component", () => {
   const taxesMock = {
     icon: "📈",
     name: "Income Tax",
-    amount: 300,
-    percentage: 15,
+    taxAmount: 300,
+    bracket: 15,
   };
 
-  render(<TaxesBlock taxes={taxesMock} />);
+  render(<TaxBlock tax={taxesMock} />);
 
-  const fullComponent = screen.getByTestId("taxes-card");
+  const fullComponent = screen.getByTestId("tax-card");
   const icon = screen.getByLabelText("icon");
   const name = screen.getByLabelText("name");
-  const taxInfo = screen.getByLabelText("tax-info");
+  const bracket = screen.getByLabelText("bracket");
+  const taxAmount = screen.getByLabelText("taxamount");
 
-  expect(icon).toBeInTheDocument();
-  expect(name).toHaveTextContent("Income Tax");
-  expect(taxInfo).toHaveTextContent(
-    `R ${taxesMock.amount.toFixed(2)} / ${taxesMock.percentage.toFixed(2)}%`
+  expect(bracket).toHaveTextContent(
+    `${taxesMock.bracket}%`
   );
+  expect(taxAmount).toHaveTextContent(`- R ${taxesMock.taxAmount.toFixed(2)}`);
+  expect(icon).toBeInTheDocument();
+  expect(name).toHaveTextContent(taxesMock.name);
   expect(fullComponent).toMatchSnapshot();
 });
 
@@ -29,47 +32,65 @@ test("Test if tax cards display when 2 tax entries are added", () => {
     {
       icon: "📈",
       name: "Income Tax",
-      amount: 300,
-      percentage: 15,
+      taxAmount: 300,
+      bracket: 15,
     },
     {
       icon: "📉",
       name: "Property Tax",
-      amount: 500,
-      percentage: 10,
+      taxAmount: 500,
+      bracket: 10,
     },
   ];
 
   render(
     <div>
       {taxesMock.map((tax, index) => (
-        <TaxesBlock key={index} taxes={tax} />
+        <TaxBlock key={index} tax={tax} />
       ))}
     </div>
   );
 
   const iconDisplay = screen.getAllByLabelText("icon");
   const nameDisplay = screen.getAllByLabelText("name");
-  const taxInfoDisplay = screen.getAllByLabelText("tax-info");
+  const bracketDisplay = screen.getAllByLabelText("bracket");
+  const taxAmountDisplay = screen.getAllByLabelText("taxamount");
 
   expect(iconDisplay).toHaveLength(2);
   expect(nameDisplay).toHaveLength(2);
-  expect(taxInfoDisplay).toHaveLength(2);
+  expect(bracketDisplay).toHaveLength(2);
+  expect(taxAmountDisplay).toHaveLength(2);
 
   nameDisplay.forEach((element, index) => {
-    expect(element).toBeInTheDocument();
     expect(element).toHaveTextContent(taxesMock[index].name);
   });
 
   iconDisplay.forEach((element, index) => {
-    expect(element).toBeInTheDocument();
     expect(element).toHaveTextContent(taxesMock[index].icon);
   });
 
-  taxInfoDisplay.forEach((element, index) => {
-    expect(element).toBeInTheDocument();
+  bracketDisplay.forEach((element, index) => {
     expect(element).toHaveTextContent(
-      `R ${taxesMock[index].amount.toFixed(2)} / ${taxesMock[index].percentage.toFixed(2)}%`
+      `${taxesMock[index].bracket}%`
     );
   });
+
+  taxAmountDisplay.forEach((element, index) => {
+    expect(element).toHaveTextContent(`- R ${taxesMock[index].taxAmount.toFixed(2)}`);
+  });
+});
+
+test("Test if Taxes component renders correctly", () => {
+  const incomeMock = [
+    { icon: "📈", name: "Income Tax", taxAmount: 300, bracket: 15 },
+    { icon: "💰", name: "Sales Tax", taxAmount: 150, bracket: 10 },
+  ];
+
+  render(<Taxes income={incomeMock} />);
+
+  const taxesComponent = screen.getByTestId("taxes-component");
+  const taxBlocks = screen.getAllByTestId("tax-card");
+
+  expect(taxesComponent).toBeInTheDocument();
+  expect(taxBlocks).toHaveLength(incomeMock.length);
 });

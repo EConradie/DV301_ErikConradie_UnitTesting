@@ -16,6 +16,10 @@ import {
   getTotalExpenses,
   calculateLeftToSpend,
 } from "./components/functions/TotalCalculations";
+import {
+  handleNewIncome,
+  handleNewExpense,
+} from "./components/functions/AddingIncomeExpense";
 
 function App() {
   const [income, setIncome] = useState([]);
@@ -32,6 +36,10 @@ function App() {
 
   const handleTotalSavings = (savings) => {
     setTotalSavings(savings);
+  };
+
+  const handleReset = () => {
+    window.location.reload();
   };
 
   useEffect(() => {
@@ -76,14 +84,14 @@ function App() {
   };
 
   return (
-    <Container fluid>
+    <Container data-testid="outer-app" fluid>
       <Row>
         <Col xs={12} className="topbar p-3 mb-4">
           <h2 className="title">
             <img src="logo512.png" width={60} height={60} />
             <span>BudgetBuddy</span>
           </h2>
-          <Button>
+          <Button onClick={handleReset}>
             <img src="reset.png" width={30} height={30} />
           </Button>
         </Col>

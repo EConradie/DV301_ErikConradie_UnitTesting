@@ -2,7 +2,6 @@ const {
   handleNewIncome,
 } = require("../components/functions/AddingIncomeExpense");
 
-//Define array
 var income = [];
 
 beforeEach(() => {
@@ -12,12 +11,10 @@ beforeEach(() => {
 });
 
 afterEach(() => {
-  //Before running the next test, first empty the array
   console.log("Happens after everything else");
   income = [];
 });
 
-//Test for adding a new income
 describe("tests for adding a new income", () => {
   test("Adding of a new income to array", () => {
     var newIncome = { name: "John", salary: 20000 };

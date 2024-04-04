@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">14.28% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/14</span>
+                <span class='fraction'>14/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">14.28% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/14</span>
+                <span class='fraction'>14/14</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -82,43 +82,43 @@
 <a name='L17'></a><a href='#L17'>17</a>
 <a name='L18'></a><a href='#L18'>18</a>
 <a name='L19'></a><a href='#L19'>19</a>
-<a name='L20'></a><a href='#L20'>20</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L20'></a><a href='#L20'>20</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export const calculateTaxBracket = <span class="fstat-no" title="function not covered" >(i</span>ncome) =&gt; {
-<span class="cstat-no" title="statement not covered" >  if (income &lt;= 6925) {</span>
-<span class="cstat-no" title="statement not covered" >    return 0;</span>
-  } else <span class="cstat-no" title="statement not covered" >if (income &lt;= 30487.5) {</span>
-<span class="cstat-no" title="statement not covered" >    return 18;</span>
-  } else <span class="cstat-no" title="statement not covered" >if (income &lt;= 51750) {</span>
-<span class="cstat-no" title="statement not covered" >    return 26;</span>
-  } else <span class="cstat-no" title="statement not covered" >if (income &lt;= 83750) {</span>
-<span class="cstat-no" title="statement not covered" >    return 31;</span>
-  } else <span class="cstat-no" title="statement not covered" >if (income &lt;= 134212.5) {</span>
-<span class="cstat-no" title="statement not covered" >    return 36;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export const calculateTaxBracket = (income) =&gt; {
+  if (income &lt;= 6925) {
+    return 0;
+  } else if (income &lt;= 30487.5) {
+    return 18;
+  } else if (income &lt;= 51750) {
+    return 26;
+  } else if (income &lt;= 83750) {
+    return 31;
+  } else if (income &lt;= 134212.5) {
+    return 36;
   } else {
-<span class="cstat-no" title="statement not covered" >    return 39;</span>
+    return 39;
   }
 };
 &nbsp;
-export const calculateTaxAmount = <span class="fstat-no" title="function not covered" >(i</span>ncome, bracket) =&gt; {
-<span class="cstat-no" title="statement not covered" >  return income * (bracket / 100);</span>
+export const calculateTaxAmount = (income, bracket) =&gt; {
+  return income * (bracket / 100);
 };
 &nbsp;</pre></td></tr></table></pre>
 
@@ -127,7 +127,7 @@ export const calculateTaxAmount = <span class="fstat-no" title="function not cov
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-04-02T09:56:34.227Z
+                at 2024-04-04T19:05:53.886Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/14</span>
+                <span class='fraction'>14/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/11</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -81,41 +81,41 @@
 <a name='L16'></a><a href='#L16'>16</a>
 <a name='L17'></a><a href='#L17'>17</a>
 <a name='L18'></a><a href='#L18'>18</a>
-<a name='L19'></a><a href='#L19'>19</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L19'></a><a href='#L19'>19</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export const getTotalIncomeBeforeTax = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(i</span>ncome = <span class="branch-0 cbranch-no" title="branch not covered" >[])</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  return income.reduce(<span class="fstat-no" title="function not covered" >(a</span>cc, curr) =&gt; <span class="cstat-no" title="statement not covered" >acc + curr.salary,</span> 0);</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export const getTotalIncomeBeforeTax = (income = []) =&gt; {
+  return income.reduce((acc, curr) =&gt; acc + curr.salary, 0);
 };
 &nbsp;
-export const getTotalIncomeAfterTax = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(i</span>ncome = <span class="branch-0 cbranch-no" title="branch not covered" >[])</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  return income.reduce(<span class="fstat-no" title="function not covered" >(a</span>cc, curr) =&gt; <span class="cstat-no" title="statement not covered" >acc + (curr.salary - curr.taxAmount),</span> 0);</span>
+export const getTotalIncomeAfterTax = (income = []) =&gt; {
+  return income.reduce((acc, curr) =&gt; acc + (curr.salary - curr.taxAmount), 0);
 };
 &nbsp;
-export const getTotalExpenses = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>xpenses = <span class="branch-0 cbranch-no" title="branch not covered" >[])</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  return expenses.reduce(<span class="fstat-no" title="function not covered" >(a</span>cc, curr) =&gt; <span class="cstat-no" title="statement not covered" >acc + curr.amount,</span> 0);</span>
+export const getTotalExpenses = (expenses = []) =&gt; {
+  return expenses.reduce((acc, curr) =&gt; acc + curr.amount, 0);
 };
 &nbsp;
-export const calculateLeftToSpend = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(i</span>ncome, expenses, totalSavings) =&gt; {</span>
-  const totalIncomeAfterTax = <span class="cstat-no" title="statement not covered" >getTotalIncomeAfterTax(income);</span>
-  const totalExp = <span class="cstat-no" title="statement not covered" >getTotalExpenses(expenses);</span>
-  const leftToSpend = <span class="cstat-no" title="statement not covered" >totalIncomeAfterTax - totalExp - totalSavings;</span>
-<span class="cstat-no" title="statement not covered" >  return leftToSpend;</span>
+export const calculateLeftToSpend = (income, expenses, totalSavings) =&gt; {
+  const totalIncomeAfterTax = getTotalIncomeAfterTax(income);
+  const totalExp = getTotalExpenses(expenses);
+  const leftToSpend = totalIncomeAfterTax - totalExp - totalSavings;
+  return leftToSpend;
 };
 &nbsp;</pre></td></tr></table></pre>
 
@@ -124,7 +124,7 @@ export const calculateLeftToSpend = <span class="cstat-no" title="statement not 
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-04-02T09:56:34.227Z
+                at 2024-04-04T19:05:53.886Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

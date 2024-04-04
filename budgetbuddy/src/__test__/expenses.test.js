@@ -2,7 +2,6 @@ const {
   handleNewExpense,
 } = require("../components/functions/AddingIncomeExpense");
 
-// Define array
 var expenses = [];
 
 beforeEach(() => {
@@ -12,12 +11,10 @@ beforeEach(() => {
 });
 
 afterEach(() => {
-  // Before running the next test, first empty the array
   console.log("After each test clear expenses");
   expenses = [];
 });
 
-// Test for adding a new expense
 describe("tests for adding a new expense", () => {
   test("Adding of a new expense to array", () => {
     var newExpense = { name: "Rent", amount: 800 };

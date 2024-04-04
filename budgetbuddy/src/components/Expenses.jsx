@@ -4,18 +4,16 @@ import ExpenseRow from "./items/ExpenseRow";
 
 function Expenses({ expenses: initialExpenses, handleNewExpense }) {
   const [expenses, setExpenses] = useState([...initialExpenses]);
-  // Adding state for each form field
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
 
   const handleAddExpense = (event) => {
     event.preventDefault();
-    const amountNumber = Number(amount); // Convert amount to number
-    if (title && amountNumber) { // Check if title and amount are provided
+    const amountNumber = Number(amount); 
+    if (title && amountNumber) { 
       const newExpense = { title, amount: amountNumber };
       setExpenses([...expenses, newExpense]);
       handleNewExpense(newExpense);
-      // Reset form fields using state
       setTitle("");
       setAmount("");
     }

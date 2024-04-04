@@ -1,0 +1,426 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot of app when rendered first time 1`] = `
+<div
+  class="container-fluid"
+  data-testid="outer-app"
+>
+  <div
+    class="row"
+  >
+    <div
+      class="topbar p-3 mb-4 col-12"
+    >
+      <h2
+        class="title"
+      >
+        <img
+          height="60"
+          src="logo512.png"
+          width="60"
+        />
+        <span>
+          BudgetBuddy
+        </span>
+      </h2>
+      <button
+        class="btn btn-primary"
+        type="button"
+      >
+        <img
+          height="30"
+          src="reset.png"
+          width="30"
+        />
+      </button>
+    </div>
+  </div>
+  <div
+    class="row"
+  >
+    <div
+      class="col-md-5 col-sm-12 col-12"
+    >
+      <div
+        class="card shadow-sm p-3 mb-4 bg-white rounded"
+      >
+        <div
+          data-testid="income-component"
+        >
+          <h3>
+            Household Monthly Salaries
+          </h3>
+          <form
+            class=""
+          >
+            <div
+              class="form-row"
+            >
+              <select
+                aria-label="icon"
+                autocomplete="off"
+                class="form-select"
+                name="icon"
+              >
+                <option
+                  disabled=""
+                  value="-"
+                >
+                  -
+                </option>
+                <option
+                  value="👩"
+                >
+                  👩
+                </option>
+                <option
+                  value="👱‍♂️"
+                >
+                  👱‍♂️
+                </option>
+                <option
+                  value="🐶"
+                >
+                  🐶
+                </option>
+                <option
+                  value="🐱"
+                >
+                  🐱
+                </option>
+                <option
+                  value="🐰"
+                >
+                  🐰
+                </option>
+                <option
+                  value="🐻"
+                >
+                  🐻
+                </option>
+                <option
+                  value="🦁"
+                >
+                  🦁
+                </option>
+                <option
+                  value="🐷"
+                >
+                  🐷
+                </option>
+                <option
+                  value="🐮"
+                >
+                  🐮
+                </option>
+              </select>
+              <input
+                aria-label="name"
+                autocomplete="off"
+                class="form-control"
+                name="name"
+                placeholder="Member Name"
+                type="text"
+                value=""
+              />
+              <input
+                aria-label="income"
+                autocomplete="off"
+                class="form-control"
+                name="income"
+                placeholder="0.00"
+                step="0.01"
+                type="number"
+                value=""
+              />
+              <button
+                class="add-income btn btn-primary"
+                type="submit"
+              >
+                Add
+              </button>
+            </div>
+          </form>
+          <div
+            class="income-outer hide-scroll"
+          />
+        </div>
+      </div>
+      <div
+        class="card shadow-sm p-3 mb-4 bg-white rounded"
+      >
+        <div
+          data-testid="taxes-component"
+          data-toggle="tooltip"
+          title="Those bastards!"
+        >
+          <h3>
+            Tax Bracket Calculation
+          </h3>
+          <div
+            class="scroll-row hide-scroll"
+          />
+        </div>
+      </div>
+      <div
+        class="card shadow-sm p-3 mb-4 bg-white rounded"
+      >
+        <div
+          data-testid="savings-component"
+        >
+          <div
+            class="title-row"
+          >
+            <h3>
+              Savings Calculation
+            </h3>
+            <span>
+              <p>
+                % you want to save
+              </p>
+              <select
+                aria-label="percentage"
+                autocomplete="off"
+                class="form-select"
+                id="percentage"
+                name="percentage"
+              >
+                <option
+                  disabled=""
+                  selected=""
+                >
+                  -
+                </option>
+                <option
+                  value="5"
+                >
+                  5
+                  %
+                </option>
+                <option
+                  value="10"
+                >
+                  10
+                  %
+                </option>
+                <option
+                  value="15"
+                >
+                  15
+                  %
+                </option>
+                <option
+                  value="20"
+                >
+                  20
+                  %
+                </option>
+              </select>
+            </span>
+          </div>
+          <div
+            class="scroll-row hide-scroll"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="col-md-4 col-12"
+    >
+      <div
+        class="card shadow-sm p-3 mb-4 bg-white rounded"
+      >
+        <div
+          data-testid="expenses-component"
+        >
+          <h3>
+            Household Monthly Expenses
+          </h3>
+          <form
+            class=""
+          >
+            <div
+              class="form-row"
+            >
+              <input
+                aria-label="title"
+                autocomplete="off"
+                class="form-control"
+                name="title"
+                placeholder="Expense Title"
+                type="text"
+                value=""
+              />
+              <input
+                aria-label="amount"
+                autocomplete="off"
+                class="form-control"
+                name="expense"
+                placeholder="0.00"
+                step="0.01"
+                type="number"
+                value=""
+              />
+              <button
+                aria-label="button"
+                class="add-expenses btn btn-primary"
+                type="submit"
+              >
+                Add
+              </button>
+            </div>
+          </form>
+          <div
+            class="expense-outer hide-scroll"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="col-md-3 col-12"
+    >
+      <div
+        class="card shadow-sm p-3 mb-4 rounded"
+      >
+        <div
+          class="total-card p-2"
+        >
+          <div
+            class="icon"
+            style="background-color: rgb(228, 253, 205);"
+          >
+            <img
+              height="40"
+              src="income.png"
+              width="40"
+            />
+          </div>
+          <div
+            class="labels"
+          >
+            <h4>
+              R 
+              0.00
+            </h4>
+            <p>
+              Total Income Before Tax
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="card shadow-sm p-3 mb-4 rounded"
+      >
+        <div
+          class="total-card p-2"
+        >
+          <div
+            class="icon"
+            style="background-color: rgb(255, 238, 210);"
+          >
+            <img
+              height="40"
+              src="tax.png"
+              width="40"
+            />
+          </div>
+          <div
+            class="labels"
+          >
+            <h4>
+              R 
+              0.00
+            </h4>
+            <p>
+              Total Income After Tax
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="card shadow-sm p-3 mb-4 rounded"
+      >
+        <div
+          class="total-card p-2"
+        >
+          <div
+            class="icon"
+            style="background-color: rgb(255, 226, 211);"
+          >
+            <img
+              height="40"
+              src="expense.png"
+              width="40"
+            />
+          </div>
+          <div
+            class="labels"
+          >
+            <h4>
+              R 
+              0.00
+            </h4>
+            <p>
+              Total Expenses
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="card shadow-sm p-3 mb-4 rounded"
+      >
+        <div
+          class="total-card p-2"
+        >
+          <div
+            class="icon"
+            style="background-color: rgb(221, 221, 247);"
+          >
+            <img
+              height="40"
+              src="savings.png"
+              width="40"
+            />
+          </div>
+          <div
+            class="labels"
+          >
+            <h4>
+              R 
+              0.00
+            </h4>
+            <p>
+              Total Savings
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="card shadow-sm p-3 mb-4 rounded last-total-card"
+      >
+        <div
+          class="final-total p-2"
+        >
+          <div
+            class="icon"
+            style="background-color: rgb(207, 242, 109);"
+          >
+            <img
+              height="40"
+              src="wallet.png"
+              width="40"
+            />
+          </div>
+          <h2>
+            R 
+            0.00
+          </h2>
+          <p>
+            Total Left To Spend Each Month 😭
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
