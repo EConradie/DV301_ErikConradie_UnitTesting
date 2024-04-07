@@ -77,3 +77,18 @@ test("Test if savings cards display when 2 savings are added", () => {
     );
   });
 });
+
+test("Test if Savings component renders correctly", () => {
+  const incomeMock = [
+    { icon: "📈", name: "Income Tax", taxAmount: 300, bracket: 15 },
+    { icon: "💰", name: "Sales Tax", taxAmount: 150, bracket: 10 },
+  ];
+
+  render(<Savings income={incomeMock} />);
+
+  const taxesComponent = screen.getByTestId("taxes-component");
+  const taxBlocks = screen.getAllByTestId("tax-card");
+
+  expect(taxesComponent).toBeInTheDocument();
+  expect(taxBlocks).toHaveLength(incomeMock.length);
+});

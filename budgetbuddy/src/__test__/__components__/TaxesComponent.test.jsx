@@ -79,18 +79,3 @@ test("Test if tax cards display when 2 tax entries are added", () => {
     expect(element).toHaveTextContent(`- R ${taxesMock[index].taxAmount.toFixed(2)}`);
   });
 });
-
-test("Test if Taxes component renders correctly", () => {
-  const incomeMock = [
-    { icon: "📈", name: "Income Tax", taxAmount: 300, bracket: 15 },
-    { icon: "💰", name: "Sales Tax", taxAmount: 150, bracket: 10 },
-  ];
-
-  render(<Taxes income={incomeMock} />);
-
-  const taxesComponent = screen.getByTestId("taxes-component");
-  const taxBlocks = screen.getAllByTestId("tax-card");
-
-  expect(taxesComponent).toBeInTheDocument();
-  expect(taxBlocks).toHaveLength(incomeMock.length);
-});

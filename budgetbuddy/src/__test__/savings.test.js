@@ -3,7 +3,7 @@ const {
 } = require("../components/functions/SavingsCalculation");
 
 describe("calculateSavings", () => {
-  it("should calculate savings correctly", () => {
+  test("should calculate savings correctly", () => {
     const income = [
       { id: 1, salary: 1000 },
       { id: 2, salary: 2000 },
@@ -24,7 +24,7 @@ describe("calculateSavings", () => {
     expect(totalSavings).toBe(600);
   });
 
-  it("should handle empty income array", () => {
+  test("should handle empty income array", () => {
     const income = [];
     const selectedPercentage = 10;
 
@@ -37,7 +37,7 @@ describe("calculateSavings", () => {
     expect(totalSavings).toBe(0);
   });
 
-  it("should handle zero selectedPercentage", () => {
+  test("should handle zero selectedPercentage", () => {
     const income = [
       { id: 1, salary: 1000 },
       { id: 2, salary: 2000 },
